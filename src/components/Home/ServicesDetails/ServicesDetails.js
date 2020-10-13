@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import './ServicesDetails.css'
 
 const ServicesDetails = (props) => {
-    console.log(props.service);
     const { img, title, description,_id } = props.service;
     return (
         <div className="col-md-4 my-5">

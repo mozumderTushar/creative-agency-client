@@ -1,7 +1,6 @@
 import React from 'react';
 
 const FeedbackDetails = (props) => {
-    console.log(props.feedback)
     const { img, name, position, info } = props.feedback;
     return (
         <div className="col-md-4 my-5">

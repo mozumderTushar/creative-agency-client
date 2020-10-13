@@ -14,6 +14,7 @@ import AddServices from './components/Customar/AddServices/AddServices';
 import Review from './components/Customar/Review/Review';
 import MakeAdmin from './components/Admin/MakeAdmin/MakeAdmin';
 import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
+import ServiceList from './components/Customar/ServiceList/ServiceList';
 
 export const UserContext = createContext();
 
@@ -43,6 +44,9 @@ function App() {
           </PrivateRoute>
           <PrivateRoute path='/makeAdmin'>
             <MakeAdmin/>
+          </PrivateRoute>
+          <PrivateRoute path='/serviceList/:serviceListId'>
+            <ServiceList/>
           </PrivateRoute>
         </Switch>
       </Router>

@@ -1,21 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 const Review = () => {
+    const [review, setReview] = useState({})
+    const history = useHistory()
+
+    const handleBlur = e => {
+        const newReview = { ...review }
+        newReview[e.target.name] = e.target.value
+        setReview(newReview)
+    }
+
+    const handleSubmit = e => {
+        e.preventDefault()
+        
+        fetch('http://localhost:5000/clientFeedback', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(review)
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data) {
+                    alert('Review Added Successfully')
+                    history.push('/')
+                }
+            })
+            .catch((error) => {
+                alert('Try Again')
+            });
+
+    }
+
     return (
         <div style={{ backgroundColor: '#E5E5E5', height: '100vh' }}>
             <div className='container' >
                 <h2 className="pt-5">Review</h2>
                 <div className='mt-3 p-5 w-75' style={{ backgroundColor: '#fff', borderRadius: '20px' }}>
-                    <form>
-
+                    <form  onSubmit={handleSubmit}>
                         <div className="form-group">
-                            <input type="text" className="form-control" id="exampleInputPassword1" placeholder="Your name" />
+                            <input type="text"  onBlur={handleBlur} className="form-control" name="name" placeholder="Your name" />
                         </div>
                         <div className="form-group">
-                            <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Company’s name, Designation" />
+                            <input type="text"  onBlur={handleBlur} className="form-control" name="position"  placeholder="Company’s name, Designation" />
                         </div>
                         <div className="form-group">
-                            <textarea className="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Description"></textarea>
+                            <textarea  onBlur={handleBlur} className="form-control" name="info" rows="5" placeholder="Description"></textarea>
                         </div>
                         <button type="submit" className="btn btn-design" >Submit</button>
                     </form>
