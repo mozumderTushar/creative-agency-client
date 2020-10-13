@@ -2,11 +2,9 @@
   background-color: #111430;
   color:white
 }
-
-.common-color{
-  color: '#7AB259'
+.btn-design:hover{
+  color:white
 }
-
 html, body {
   width: 100%;
   height: 100%;
