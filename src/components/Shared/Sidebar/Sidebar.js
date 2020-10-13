@@ -5,12 +5,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart,  faCommentAlt, faPlus,faUserPlus } from '@fortawesome/free-solid-svg-icons';
 
 
-const Sidebar = () => {
+const Sidebar = ({serviceId}) => {
     return (
         <div className="sidebar d-flex flex-column justify-content-between col-md-2 py-5 px-4" style={{ height: "100vh" }}>
             <ul className="list-unstyled">
                 <li>
-                    <Link to="/order" className="text-dark">
+                    <Link to={`/order/${serviceId}`} className="text-dark">
                         <FontAwesomeIcon icon={faShoppingCart} /> <span>Order</span>
                     </Link>
                 </li>

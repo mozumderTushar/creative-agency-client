@@ -1,14 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import fakeData from '../../../../src/fakeData/services'
 import ServicesDetails from '../ServicesDetails/ServicesDetails';
 
 const Services = () => {
     const [services, setService] = useState([])
-
-    // useEffect(() => {
-    //     const serviceType = fakeData;
-    //     setService(serviceType)
-    // }, [])
 
     useEffect(()=>{
         fetch('http://localhost:5000/services')

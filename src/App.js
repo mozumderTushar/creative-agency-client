@@ -13,6 +13,7 @@ import OrderForm from './components/Customar/OrderForm/OrderForm';
 import AddServices from './components/Customar/AddServices/AddServices';
 import Review from './components/Customar/Review/Review';
 import MakeAdmin from './components/Admin/MakeAdmin/MakeAdmin';
+import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
 
 export const UserContext = createContext();
 
@@ -28,21 +29,21 @@ function App() {
           <Route path='/login'>
             <Login/>
           </Route>
-          <Route path='/customar'>
+          <PrivateRoute path='/customar/:serviceId'>
             <Customar/>
-          </Route>
-          <Route path='/order'>
+          </PrivateRoute>
+          <PrivateRoute path='/order/:orderId'>
             <OrderForm/>
-          </Route>
-          <Route path='/addService'>
+          </PrivateRoute>
+          <PrivateRoute path='/addService'>
             <AddServices/>
-          </Route>
-          <Route path='/review'>
+          </PrivateRoute>
+          <PrivateRoute path='/review'>
             <Review/>
-          </Route>
-          <Route path='/makeAdmin'>
+          </PrivateRoute>
+          <PrivateRoute path='/makeAdmin'>
             <MakeAdmin/>
-          </Route>
+          </PrivateRoute>
         </Switch>
       </Router>
       </UserContext.Provider>
