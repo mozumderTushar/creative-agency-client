@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import fakeClient from '../../../../src/fakeData/clients'
 import FeedbackDetails from '../FeedbackDetails/FeedbackDetails';
 
 const ClientFeedback = () => {
     const [feedback, setFeedback] = useState([])
 
     useEffect(() => {
-        const feedbackInfo = fakeClient;
-        setFeedback(feedbackInfo)
+        fetch('http://localhost:5000/feedback')
+        .then(response => response.json())
+        .then(result => setFeedback(result))
     },[])
     return (
         <section className='container text-center'>
@@ -15,7 +15,7 @@ const ClientFeedback = () => {
            <div className='row'>
            <div className='row'>
            {
-                feedback.map(feedback => <FeedbackDetails key={feedback.id} feedback={feedback}></FeedbackDetails>)
+                feedback.map(feedback => <FeedbackDetails key={feedback._id} feedback={feedback}></FeedbackDetails>)
             }
            </div>
            </div>
