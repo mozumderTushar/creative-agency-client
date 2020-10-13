@@ -11,7 +11,7 @@ const HeaderMain = () => {
             <button className="btn btn-design mt-3">Hire us</button>
         </div>
         <div className="col-md-6">
-            <img className="img-fluid" style={{ height: '422px'}} src={headerImg} alt="" />
+            <img className="img-fluid" style={{ height: '420px', width:'624'}} src={headerImg} alt="" />
         </div>
     </main>
     );

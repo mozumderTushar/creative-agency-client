@@ -4,7 +4,7 @@ const FeedbackDetails = (props) => {
     console.log(props.feedback)
     const { img, name, position, info } = props.feedback;
     return (
-        <div className="col-md-4 mt-5">
+        <div className="col-md-4 my-5">
             <div className="single-item">
                 <div className="card p-3">
                     <div className="card-body">
