@@ -12,6 +12,8 @@ const OrderForm = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
     const history = useHistory()
 
+    console.log(loggedInUser);
+
     useEffect(() => {
         fetch('http://localhost:5000/services')
             .then(response => response.json())
@@ -61,9 +63,11 @@ const OrderForm = () => {
 
                         <input name="name" ref={register({ required: true })} placeholder="Your name / company’s name" />
                         {errors.name && <span className="error">Name is required</span>}
+{/* 
+                        <input name="email" ref={register({ required: true})} defaultValue={loggedInUser.email}  />
+                        {errors.email && <span className="error">Valid Email format is required</span>} */}
 
-                        <input name="email" ref={register({ required: true, pattern: /\S+@\S+\.\S+/ })} placeholder="Your email address" />
-                        {errors.email && <span className="error">Valid Email format is required</span>}
+                        <input name="email" ref={register({ required: true })} defaultValue={loggedInUser.email} />
 
                         <input name="service" ref={register({ required: true })} defaultValue={services.title} />
 

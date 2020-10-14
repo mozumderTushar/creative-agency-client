@@ -26,7 +26,7 @@ const Login = () => {
             const { displayName, email } = result.user;
             const signedInUser = { name: displayName, email }
             setLoggedInUser(signedInUser)
-            setUserToken();
+            // setUserToken();
             history.replace(from);
            
 
