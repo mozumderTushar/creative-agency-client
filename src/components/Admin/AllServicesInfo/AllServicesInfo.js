@@ -14,8 +14,7 @@ const AllServicesInfo = ({ allServices }) => {
             </thead>
             <tbody>
             {
-                  allServices.map((service) => 
-                        
+                  allServices.map((service) =>       
                     <tr key={service._id}>
                         <td>{service.name}</td>
                         <td>{service.email}</td>

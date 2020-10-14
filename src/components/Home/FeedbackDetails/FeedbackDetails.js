@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { UserContext } from '../../../App';
 
 const FeedbackDetails = (props) => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
     const { img, name, position, info } = props.feedback;
     return (
         <div className="col-md-4 my-5">

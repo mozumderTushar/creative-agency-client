@@ -12,8 +12,6 @@ const OrderForm = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
     const history = useHistory()
 
-    console.log(loggedInUser);
-
     useEffect(() => {
         fetch('http://localhost:5000/services')
             .then(response => response.json())

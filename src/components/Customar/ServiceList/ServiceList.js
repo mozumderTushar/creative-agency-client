@@ -15,10 +15,12 @@ const ServiceList = () => {
                 setOrderedServices(data)
             })
     }, [])
-console.log(orderedServices);
+
+    
     return (
         <div className="container">
             <div className="row">
+               
                 {
                     orderedServices.map(order => <ServiceListDetails key={order._id} order={order}></ServiceListDetails>)
                 }

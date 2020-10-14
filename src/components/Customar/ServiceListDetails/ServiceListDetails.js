@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 const ServiceListDetails = (props) => {
-    const { img,service,details } = props.order;
+    const { service } = props.order;
 
     const [placedOrder, setPlacedOrder] = useState([])
 
@@ -13,12 +13,19 @@ const ServiceListDetails = (props) => {
             setPlacedOrder(orderItems)
         })
     },[])
-    console.log(placedOrder);
+  console.log(placedOrder);
 
     return (
         <div className="col-md-4 my-5 text-center">
             <div className="card p-3 ">
-                <img src={placedOrder.img} alt="" className="card-img-top" style={{ height: '74px', width: '74px', margin: '0 auto' }} />
+        {
+            placedOrder.length === 0 && <p>loading...</p>
+        }
+            {
+                            placedOrder.image ? <img style={{ height: '74px', width: '74px', margin: '0 auto' }} src={`data:image/png;base64,${placedOrder.image.img}`} /> :
+                                <img src={placedOrder.img} alt="" className="card-img-top" style={{ height: '74px', width: '74px', margin: '0 auto' }} />
+                        }
+               
                 <div className="card-body">
                     <div className="card-title"><h3>{service}</h3></div>
                     <p>{placedOrder.description}</p>

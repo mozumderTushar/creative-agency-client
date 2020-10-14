@@ -31,7 +31,6 @@ const Review = () => {
             .catch((error) => {
                 alert('Try Again')
             });
-
     }
 
     return (
