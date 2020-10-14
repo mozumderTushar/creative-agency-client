@@ -9,7 +9,11 @@ const ServicesDetails = (props) => {
             <div className="single-item ">
                <Link to={`/customar/${_id}`} style={{ textDecoration: 'none', color: '#000'}} >
                <div className="card p-3 service-card">
-                    <img src={`http://localhost:5000/${img}`} alt="" className="card-img-top" style={{ height: '74px', width: '74px', margin: '0 auto' }} />
+                   {
+                       props.service.image ?  <img style={{ height: '74px', width: '74px', margin: '0 auto' }} src={`data:image/png;base64,${props.service.image.img}`} /> :
+                       <img src={`http://localhost:5000/${img}`} alt="" className="card-img-top" style={{ height: '74px', width: '74px', margin: '0 auto' }} />
+                   }
+
                     <div className="card-body">
                         <div className="card-title"><h3>{title}</h3></div>
                         <p>{description}</p>

@@ -16,45 +16,49 @@ import MakeAdmin from './components/Admin/MakeAdmin/MakeAdmin';
 import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
 import ServiceList from './components/Customar/ServiceList/ServiceList';
 import NotFound from './components/NotFound/NotFound';
+import AllServices from './components/Admin/AddServices/AllServices/AllServices';
 
 export const UserContext = createContext();
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
   return (
-    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}> 
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
         <Switch>
           <Route exact path='/'>
-            <Home/>
+            <Home />
           </Route>
           <Route path='/login'>
-            <Login/>
+            <Login />
           </Route>
           <PrivateRoute path='/customar/:serviceId'>
-            <Customar/>
+            <Customar />
           </PrivateRoute>
           <PrivateRoute path='/order/:orderId'>
-            <OrderForm/>
+            <OrderForm />
           </PrivateRoute>
           <PrivateRoute path='/addService'>
-            <AddServices/>
+            <AddServices />
           </PrivateRoute>
           <PrivateRoute path='/review'>
-            <Review/>
+            <Review />
           </PrivateRoute>
           <PrivateRoute path='/makeAdmin'>
-            <MakeAdmin/>
+            <MakeAdmin />
           </PrivateRoute>
           <PrivateRoute path='/serviceList'>
-            <ServiceList/>
+            <ServiceList />
+          </PrivateRoute>
+          <PrivateRoute path='/allServices'>
+            <AllServices />
           </PrivateRoute>
           <Route path='*'>
-            <NotFound/>
+            <NotFound />
           </Route>
         </Switch>
       </Router>
-      </UserContext.Provider>
+    </UserContext.Provider>
   );
 }
 
