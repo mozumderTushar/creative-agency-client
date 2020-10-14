@@ -10,7 +10,7 @@ import Home from './components/Home/Home/Home';
 import Login from './components/Login/Login/Login';
 import Customar from './components/Customar/Customar/Customar';
 import OrderForm from './components/Customar/OrderForm/OrderForm';
-import AddServices from './components/Customar/AddServices/AddServices';
+import AddServices from './components/Admin/AddServices/AddServices';
 import Review from './components/Customar/Review/Review';
 import MakeAdmin from './components/Admin/MakeAdmin/MakeAdmin';
 import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
