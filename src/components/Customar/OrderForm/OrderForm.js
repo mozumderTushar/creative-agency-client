@@ -44,7 +44,7 @@ const OrderForm = () => {
             .then(data => {
                 if (data) {
                     alert('Order Placed Successfully')
-                    history.push('/')
+                    history.push('/serviceList')
                 }
             })
             .catch((error) => {
@@ -56,7 +56,7 @@ const OrderForm = () => {
         <div style={{ backgroundColor: '#E5E5E5', height: '100vh' }}>
             <div className='container' >
                 <h2 className="pt-5">Order</h2>
-                <div className='mt-3 p-5 w-75' style={{ backgroundColor: '#fff', borderRadius: '20px' }}>
+                <div className='mt-3 p-5' style={{ backgroundColor: '#fff', borderRadius: '20px' }}>
                     <form className="addOrder" onSubmit={handleSubmit(onSubmit)}>
 
                         <input name="name" ref={register({ required: true })} placeholder="Your name / company’s name" />

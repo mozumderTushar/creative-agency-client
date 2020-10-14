@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import ServiceListDetails from '../ServiceListDetails/ServiceListDetails';
 
 const ServiceList = () => {
-    const { serviceListId } = useParams();
+   
     const [orderedServices, setOrderedServices] = useState([])
 
     useEffect(() => {

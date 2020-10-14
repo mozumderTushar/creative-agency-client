@@ -45,7 +45,7 @@ function App() {
           <PrivateRoute path='/makeAdmin'>
             <MakeAdmin/>
           </PrivateRoute>
-          <PrivateRoute path='/serviceList/:serviceListId'>
+          <PrivateRoute path='/serviceList'>
             <ServiceList/>
           </PrivateRoute>
         </Switch>

@@ -16,7 +16,7 @@ const Sidebar = ({serviceId}) => {
                 </li>
 
                 <li>
-                    <Link to={`/serviceList/${serviceId}`} className="text-dark">
+                    <Link to="/serviceList" className="text-dark">
                         <FontAwesomeIcon icon={faCommentAlt} /> <span>Service list</span>
                     </Link>
                 </li>
