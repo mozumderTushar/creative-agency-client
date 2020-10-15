@@ -8,10 +8,8 @@ import './Header.css'
 const Header = () => {
     return (
         <div className="header-bg" style={{ backgroundColor: '#FBD062' }}>
-
-                <Navbar />
-                <HeaderMain />
-
+            <Navbar />
+            <HeaderMain />
         </div>
     );
 };

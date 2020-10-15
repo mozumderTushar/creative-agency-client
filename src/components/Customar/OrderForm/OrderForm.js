@@ -23,16 +23,16 @@ const OrderForm = () => {
 
     const onSubmit = data => {
         const orderDetails = {
-            ...loggedInUser, 
-            name: data.name, 
-            email: data.email, 
+            ...loggedInUser,
+            name: data.name,
+            email: data.email,
             service: data.service,
             details: data.details,
             price: data.price,
             time: new Date()
         }
-        
-        
+
+
         fetch('http://localhost:5000/singleOrder', {
             method: 'POST',
             headers: {
@@ -65,7 +65,7 @@ const OrderForm = () => {
 
                         <input name="email" ref={register({ required: true })} defaultValue={loggedInUser.email} />
 
-                        <input name="service" ref={register({ required: true })} defaultValue={services.title} placeholder="loading..."/>
+                        <input name="service" ref={register({ required: true })} defaultValue={services.title} placeholder="loading..." />
 
                         <input name="details" className="project-details" ref={register({ required: true })} placeholder="Project Details" />
                         {errors.details && <span className="error">Project Details is required</span>}

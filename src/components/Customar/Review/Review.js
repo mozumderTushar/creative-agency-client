@@ -18,10 +18,10 @@ const Review = () => {
         e.preventDefault()
 
         const clientReview = {
-            ...review, 
-            img:loggedInUser.photoURL
+            ...review,
+            img: loggedInUser.photoURL
         }
-        
+
         fetch('http://localhost:5000/clientFeedback', {
             method: 'POST',
             headers: {
@@ -46,15 +46,15 @@ const Review = () => {
             <div className='container' >
                 <h2 className="pt-5">Review</h2>
                 <div className='mt-3 p-5 w-75' style={{ backgroundColor: '#fff', borderRadius: '20px' }}>
-                    <form  onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit}>
                         <div className="form-group">
-                            <input type="text"  onBlur={handleBlur} className="form-control" name="name" placeholder="Your name" />
+                            <input type="text" onBlur={handleBlur} className="form-control" name="name" placeholder="Your name" />
                         </div>
                         <div className="form-group">
-                            <input type="text"  onBlur={handleBlur} className="form-control" name="position"  placeholder="Company’s name, Designation" />
+                            <input type="text" onBlur={handleBlur} className="form-control" name="position" placeholder="Company’s name, Designation" />
                         </div>
                         <div className="form-group">
-                            <textarea  onBlur={handleBlur} className="form-control" name="info" rows="5" placeholder="Description"></textarea>
+                            <textarea onBlur={handleBlur} className="form-control" name="info" rows="5" placeholder="Description"></textarea>
                         </div>
                         <button type="submit" className="btn btn-design" >Submit</button>
                     </form>

@@ -5,8 +5,8 @@ import Sidebar from '../../Shared/Sidebar/Sidebar';
 
 
 const Customar = () => {
-    const {serviceId} = useParams()
-      
+    const { serviceId } = useParams()
+
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
 
     return (

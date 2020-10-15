@@ -17,7 +17,7 @@ const Login = () => {
 
     let history = useHistory();
     let location = useLocation();
-  
+
     let { from } = location.state || { from: { pathname: "/" } };
 
     const handleGoogleSignIn = () => {
@@ -27,7 +27,7 @@ const Login = () => {
             const signedInUser = { name: displayName, email, photoURL }
             setLoggedInUser(signedInUser)
             history.replace(from);
-           
+
 
         }).catch(function (error) {
             var errorCode = error.code;

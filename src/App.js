@@ -16,7 +16,8 @@ import MakeAdmin from './components/Admin/MakeAdmin/MakeAdmin';
 import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
 import ServiceList from './components/Customar/ServiceList/ServiceList';
 import NotFound from './components/NotFound/NotFound';
-import AllServices from './components/Admin/AddServices/AllServices/AllServices';
+import AllServices from './components/Admin/AllServices/AllServices';
+import Sidebar from './components/Shared/Sidebar/Sidebar';
 
 export const UserContext = createContext();
 
@@ -52,6 +53,9 @@ function App() {
           </PrivateRoute>
           <PrivateRoute path='/allServices'>
             <AllServices />
+          </PrivateRoute>
+          <PrivateRoute path='/sidebar'>
+            <Sidebar />
           </PrivateRoute>
           <Route path='*'>
             <NotFound />

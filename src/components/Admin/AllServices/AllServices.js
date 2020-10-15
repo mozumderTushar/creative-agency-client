@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Sidebar from '../../../Shared/Sidebar/Sidebar';
-import AllServicesInfo from '../../AllServicesInfo/AllServicesInfo';
+import Sidebar from '../../Shared/Sidebar/Sidebar';
+import AllServicesInfo from '../AllServicesInfo/AllServicesInfo';
 
 const AllServices = () => {
     const [allServices, setAllServices] = useState([])

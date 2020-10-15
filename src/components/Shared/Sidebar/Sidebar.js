@@ -6,6 +6,7 @@ import { faShoppingCart, faCommentAlt, faPlus, faUserPlus, faShoppingBasket } fr
 
 
 const Sidebar = ({ serviceId, loggedInUser }) => {
+    
 
     const [isAdmin, setIsAdmin] = useState([])
 
@@ -22,12 +23,15 @@ const Sidebar = ({ serviceId, loggedInUser }) => {
         <div className="sidebar d-flex flex-column justify-content-between col-md-2 py-5 px-4" style={{ height: "100vh" }}>
             <ul className="list-unstyled">
 
-                {!isAdmin && <div>
+                { !isAdmin && {serviceId} && <div>
                     <li>
                         <Link to={`/order/${serviceId}`} className="text-dark">
                             <FontAwesomeIcon icon={faShoppingCart} /> <span>Order</span>
                         </Link>
                     </li>
+                </div>}
+
+                {!isAdmin && <div>
 
                     <li>
                         <Link to="/serviceList" className="text-dark">

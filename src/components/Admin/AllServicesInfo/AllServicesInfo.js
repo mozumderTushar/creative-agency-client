@@ -13,14 +13,14 @@ const AllServicesInfo = ({ allServices }) => {
                 </tr>
             </thead>
             <tbody>
-            {
-                  allServices.map((service) =>       
-                    <tr key={service._id}>
-                        <td>{service.name}</td>
-                        <td>{service.email}</td>
-                        <td>{service.service}</td>
-                        <td>{service.details}</td>
-                    </tr>
+                {
+                    allServices.map((service) =>
+                        <tr key={service._id}>
+                            <td>{service.name}</td>
+                            <td>{service.email}</td>
+                            <td>{service.service}</td>
+                            <td>{service.details}</td>
+                        </tr>
                     )
                 }
             </tbody>
