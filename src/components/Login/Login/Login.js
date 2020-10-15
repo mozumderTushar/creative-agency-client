@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import * as firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from '../firebase.config';
@@ -14,11 +14,21 @@ const Login = () => {
     }
 
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
+    const [adminList, setAdminList] = useState([]);
 
     let history = useHistory();
     let location = useLocation();
 
     let { from } = location.state || { from: { pathname: "/" } };
+
+    useEffect(() => {
+        fetch('https://agile-cove-78620.herokuapp.com/allAdmin')
+            .then(response => response.json())
+            .then(data => {
+                setAdminList(data)
+            })
+    }, [])
+
 
     const handleGoogleSignIn = () => {
         const provider = new firebase.auth.GoogleAuthProvider();
@@ -26,9 +36,14 @@ const Login = () => {
             const { displayName, email, photoURL } = result.user;
             const signedInUser = { name: displayName, email, photoURL }
             setLoggedInUser(signedInUser)
-            history.replace(from);
 
-
+            const isAdmin=adminList?.find(admin=>admin.email===signedInUser.email);
+            if(isAdmin){
+                history.push('/sidebar');
+            }
+            else{
+                history.push('/')
+            }
         }).catch(function (error) {
             var errorCode = error.code;
             var errorMessage = error.message;

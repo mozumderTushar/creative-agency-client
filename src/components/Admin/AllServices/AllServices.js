@@ -15,7 +15,10 @@ const AllServices = () => {
     return (
         <div className="container">
             <div className="row">
-                <div className="col-md-10 p-4 pr-5">
+                <div className="col-md-2" style={{marginBottom:'300px'}}>
+                <Sidebar/>
+                </div>
+                <div className="col-md-10 p-4 pr-5 col-12" >
                     <h5>Services List</h5>
                     <AllServicesInfo allServices={allServices}></AllServicesInfo>
                 </div>

@@ -3,7 +3,7 @@ import React from 'react';
 const AllServicesInfo = ({ allServices }) => {
     console.log(allServices);
     return (
-        <table className="table table-borderless">
+        <table className="table table-borderless" style={{backgroundColor: '#FFE'}}>
             <thead>
                 <tr>
                     <th className="text-secondary" scope="col">Name</th>
