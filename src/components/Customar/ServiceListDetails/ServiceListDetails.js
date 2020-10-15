@@ -6,7 +6,7 @@ const ServiceListDetails = (props) => {
     const [placedOrder, setPlacedOrder] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://agile-cove-78620.herokuapp.com/services')
             .then(response => response.json())
             .then(data => {
                 const orderItems = data.find(order => order.title.toLowerCase() === service.toLowerCase())

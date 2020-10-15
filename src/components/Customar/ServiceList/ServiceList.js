@@ -9,7 +9,7 @@ const ServiceList = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
 
     useEffect(() => {
-        fetch('http://localhost:5000/order?email=' + loggedInUser.email)
+        fetch('https://agile-cove-78620.herokuapp.com/order?email=' + loggedInUser.email)
             .then(response => response.json())
             .then(data => {
                 setOrderedServices(data)

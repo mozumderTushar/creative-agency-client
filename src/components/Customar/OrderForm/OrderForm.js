@@ -13,7 +13,7 @@ const OrderForm = () => {
     const history = useHistory()
 
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://agile-cove-78620.herokuapp.com/services')
             .then(response => response.json())
             .then(data => {
                 const serviceName = data.find(service => service._id === orderId)
@@ -33,7 +33,7 @@ const OrderForm = () => {
         }
 
 
-        fetch('http://localhost:5000/singleOrder', {
+        fetch('https://agile-cove-78620.herokuapp.com/singleOrder', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

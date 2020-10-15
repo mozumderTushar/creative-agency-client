@@ -5,7 +5,7 @@ const ClientFeedback = () => {
     const [feedback, setFeedback] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/feedback')
+        fetch('https://agile-cove-78620.herokuapp.com/feedback')
             .then(response => response.json())
             .then(result => setFeedback(result))
     }, [])

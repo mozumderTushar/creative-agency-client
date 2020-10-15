@@ -6,7 +6,7 @@ const AllServices = () => {
     const [allServices, setAllServices] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/orderList')
+        fetch('https://agile-cove-78620.herokuapp.com/orderList')
             .then(res => res.json())
             .then(data => setAllServices(data))
     }, [])

@@ -22,7 +22,7 @@ const Review = () => {
             img: loggedInUser.photoURL
         }
 
-        fetch('http://localhost:5000/clientFeedback', {
+        fetch('https://agile-cove-78620.herokuapp.com/clientFeedback', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

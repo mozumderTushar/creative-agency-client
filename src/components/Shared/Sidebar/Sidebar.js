@@ -11,7 +11,7 @@ const Sidebar = ({ serviceId, loggedInUser }) => {
     const [isAdmin, setIsAdmin] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/allAdmin')
+        fetch('https://agile-cove-78620.herokuapp.com/allAdmin')
             .then(response => response.json())
             .then(data => {
                 const adminList = data.find(admin => admin.email === loggedInUser.email)
