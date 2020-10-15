@@ -13,7 +13,6 @@ const ServiceListDetails = (props) => {
             setPlacedOrder(orderItems)
         })
     },[])
-  console.log(placedOrder);
 
     return (
         <div className="col-md-4 my-5 text-center">

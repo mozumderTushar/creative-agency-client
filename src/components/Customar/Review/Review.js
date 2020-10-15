@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { UserContext } from '../../../App';
 
 const Review = () => {
     const [review, setReview] = useState({})
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
     const history = useHistory()
 
     const handleBlur = e => {
@@ -11,15 +13,21 @@ const Review = () => {
         setReview(newReview)
     }
 
+
     const handleSubmit = e => {
         e.preventDefault()
+
+        const clientReview = {
+            ...review, 
+            img:loggedInUser.photoURL
+        }
         
         fetch('http://localhost:5000/clientFeedback', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(review)
+            body: JSON.stringify(clientReview)
         })
             .then(response => response.json())
             .then(data => {

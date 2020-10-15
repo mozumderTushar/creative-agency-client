@@ -44,7 +44,7 @@ const OrderForm = () => {
             .then(data => {
                 if (data) {
                     alert('Order Placed Successfully')
-                    history.push('/serviceList')
+                    history.push(`/customar/${orderId}`)
                 }
             })
             .catch((error) => {
@@ -57,17 +57,15 @@ const OrderForm = () => {
             <div className='container' >
                 <h2 className="pt-5">Order</h2>
                 <div className='mt-3 p-5' style={{ backgroundColor: '#fff', borderRadius: '20px' }}>
+
                     <form className="addOrder" onSubmit={handleSubmit(onSubmit)}>
 
                         <input name="name" ref={register({ required: true })} placeholder="Your name / company’s name" />
                         {errors.name && <span className="error">Name is required</span>}
-{/* 
-                        <input name="email" ref={register({ required: true})} defaultValue={loggedInUser.email}  />
-                        {errors.email && <span className="error">Valid Email format is required</span>} */}
 
                         <input name="email" ref={register({ required: true })} defaultValue={loggedInUser.email} />
 
-                        <input name="service" ref={register({ required: true })} defaultValue={services.title} />
+                        <input name="service" ref={register({ required: true })} defaultValue={services.title} placeholder="loading..."/>
 
                         <input name="details" className="project-details" ref={register({ required: true })} placeholder="Project Details" />
                         {errors.details && <span className="error">Project Details is required</span>}

@@ -8,18 +8,18 @@ import Works from '../Works/Works';
 
 
 const Home = () => {
- 
     return (
         <div>
-            
-            <Header/>
-            <Client/>
-            <Services/>
-            <Works/>
-            <ClientFeedback/>
-            <Footer/>
+            <Header />
+            <Client />
+            <Services />
+            <Works />
+            <ClientFeedback />
+            <Footer />
         </div>
     );
 };
 
 export default Home;
+
+
