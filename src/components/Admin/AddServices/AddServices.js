@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { UserContext } from '../../../App';
 import Sidebar from '../../Shared/Sidebar/Sidebar';
 import './AddServices.css'
 
@@ -8,7 +9,9 @@ const AddServices = () => {
 
     const [addService, setAddService] = useState({})
     const [file, setFile] = useState(null)
+
     const history = useHistory()
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
 
     const handleBlur = e => {
         const newService = { ...addService }
@@ -49,10 +52,18 @@ const AddServices = () => {
         <div >
             <div className='container' style={{ backgroundColor: '#fff' }}>
                 <div className="row">
-       
-                    <div className="col-md-10 col-12 p-4" >
-                        <h2 className="pt-5">Add Services</h2>
-                        <div className='my-5 p-5 service'>
+                    <div className="col-md-2 my-5">
+                        <Sidebar />
+                    </div>
+                    <div className="col-md-10 services-details" >
+                        <div className="d-flex mt-5 justify-content-between">
+                            <h2 >Add Services</h2>
+                            <div className="d-flex">
+                                <img src={loggedInUser.photoURL} alt="" style={{ height: '30px', width: '30px', borderRadius: '50%' }} />
+                                <h5>{loggedInUser.name}</h5>
+                            </div>
+                        </div>
+                        <div className='my-2 p-4 service'>
 
                             <form onSubmit={handleSubmit} className="service-form">
                                 <div className="form-row">

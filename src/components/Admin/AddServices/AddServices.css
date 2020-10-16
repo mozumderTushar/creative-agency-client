@@ -7,3 +7,8 @@
     background-color: aliceblue;
     border-radius:20px
 }
+@media (max-width: 767px){
+  .services-details{
+      margin-top: 200px;
+  }
+}
