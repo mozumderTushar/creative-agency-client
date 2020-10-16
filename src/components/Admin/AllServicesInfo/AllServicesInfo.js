@@ -1,9 +1,9 @@
 import React from 'react';
+import './AllServices.css'
 
 const AllServicesInfo = ({ allServices }) => {
-    console.log(allServices);
     return (
-        <table className="table table-borderless" style={{backgroundColor: '#FFE'}}>
+        <table className="table table-borderless" style={{backgroundColor: '#fff', borderRadius:'10px'}}>
             <thead>
                 <tr>
                     <th className="text-secondary" scope="col">Name</th>
