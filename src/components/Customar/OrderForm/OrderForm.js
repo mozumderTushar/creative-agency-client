@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory, useParams } from 'react-router-dom';
 import { UserContext } from '../../../App';
+import Sidebar from '../../Shared/Sidebar/Sidebar';
 import './OrderForm.css'
 
 const OrderForm = () => {
@@ -53,29 +54,42 @@ const OrderForm = () => {
     }
 
     return (
-        <div style={{ backgroundColor: '#E5E5E5', height: '100vh' }}>
+        <div style={{ backgroundColor: '#fff', height: '100vh' }}>
             <div className='container' >
-                <h2 className="pt-5">Order</h2>
-                <div className='mt-3 p-5' style={{ backgroundColor: '#fff', borderRadius: '20px' }}>
+                <div className="row">
+                    <div className="col-md-2" style={{ marginBottom: '300px' }}>
+                        <Sidebar />
+                    </div>
+                    <div className="col-md-10">
+                        <div className="d-flex justify-content-between pt-5">
+                            <h2>Services List</h2>
+                            <div className="d-flex">
+                                <img src={loggedInUser.photoURL} alt="" style={{ height: '30px', width: '30px', borderRadius: '50%' }} />
+                                <h5>{loggedInUser.name}</h5>
+                            </div>
+                        </div>
+                        <div className='mt-3 p-5' style={{ backgroundColor: 'aliceblue', borderRadius: '20px' }}>
 
-                    <form className="addOrder" onSubmit={handleSubmit(onSubmit)}>
+                            <form className="addOrder" onSubmit={handleSubmit(onSubmit)}>
 
-                        <input name="name" ref={register({ required: true })} placeholder="Your name / company’s name" />
-                        {errors.name && <span className="error">Name is required</span>}
+                                <input name="name" ref={register({ required: true })} placeholder="Your name / company’s name" />
+                                {errors.name && <span className="error">Name is required</span>}
 
-                        <input name="email" ref={register({ required: true })} defaultValue={loggedInUser.email} />
+                                <input name="email" ref={register({ required: true })} defaultValue={loggedInUser.email} />
 
-                        <input name="service" ref={register({ required: true })} defaultValue={services.title} placeholder="loading..." />
+                                <input name="service" ref={register({ required: true })} defaultValue={services.title} placeholder="loading..." />
 
-                        <input name="details" className="project-details" ref={register({ required: true })} placeholder="Project Details" />
-                        {errors.details && <span className="error">Project Details is required</span>}
+                                <input name="details" className="project-details" ref={register({ required: true })} placeholder="Project Details" />
+                                {errors.details && <span className="error">Project Details is required</span>}
 
-                        <input name="price" className="mb-3" ref={register({ required: true, pattern: /^[0-9]/ })} placeholder="price" />
-                        {errors.price && <span className="error">valid price is required</span>}
+                                <input name="price" className="mb-3" ref={register({ required: true, pattern: /^[0-9]/ })} placeholder="price" />
+                                {errors.price && <span className="error">valid price is required</span>}
 
-                        <button className="btn btn-design mt-2" type="submit">Send</button>
+                                <button className="btn btn-design mt-2" type="submit">Send</button>
 
-                    </form>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div >

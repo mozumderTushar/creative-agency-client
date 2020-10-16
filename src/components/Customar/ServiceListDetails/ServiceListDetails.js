@@ -16,7 +16,7 @@ const ServiceListDetails = (props) => {
 
     return (
         <div className="col-md-4 my-5 text-center">
-            <div className="card p-3 ">
+            <div className="card p-3" style={{border:'none', height:'23rem', borderRadius:'20px'}}>
                 {
                     placedOrder.length === 0 && <p>loading...</p>
                 }

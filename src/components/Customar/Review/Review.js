@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { UserContext } from '../../../App';
+import Sidebar from '../../Shared/Sidebar/Sidebar';
 
 const Review = () => {
     const [review, setReview] = useState({})
@@ -42,22 +43,35 @@ const Review = () => {
     }
 
     return (
-        <div style={{ backgroundColor: '#E5E5E5', height: '100vh' }}>
+        <div style={{ backgroundColor: '#fff', height: '100vh' }}>
             <div className='container' >
-                <h2 className="pt-5">Review</h2>
-                <div className='mt-3 p-5 w-75' style={{ backgroundColor: '#fff', borderRadius: '20px' }}>
-                    <form onSubmit={handleSubmit}>
-                        <div className="form-group">
-                            <input type="text" onBlur={handleBlur} className="form-control" name="name" placeholder="Your name" />
+                <div className="row">
+                    <div className="col-md-2" style={{ marginBottom: '300px' }}>
+                        <Sidebar />
+                    </div>
+                    <div className="col-md-10">
+                        <div className="d-flex justify-content-between mt-5">
+                            <h2>Review</h2>
+                            <div className="d-flex">
+                                <img src={loggedInUser.photoURL} alt="" style={{ height: '30px', width: '30px', borderRadius: '50%' }} />
+                                <h5>{loggedInUser.name}</h5>
+                            </div>
                         </div>
-                        <div className="form-group">
-                            <input type="text" onBlur={handleBlur} className="form-control" name="position" placeholder="Company’s name, Designation" />
+                        <div className='mt-3 p-5' style={{ backgroundColor: 'aliceblue', borderRadius: '20px' }}>
+                            <form onSubmit={handleSubmit}>
+                                <div className="form-group">
+                                    <input type="text" onBlur={handleBlur} className="form-control" name="name" placeholder="Your name" />
+                                </div>
+                                <div className="form-group">
+                                    <input type="text" onBlur={handleBlur} className="form-control" name="position" placeholder="Company’s name, Designation" />
+                                </div>
+                                <div className="form-group">
+                                    <textarea onBlur={handleBlur} className="form-control" name="info" rows="5" placeholder="Description"></textarea>
+                                </div>
+                                <button type="submit" className="btn btn-design" >Submit</button>
+                            </form>
                         </div>
-                        <div className="form-group">
-                            <textarea onBlur={handleBlur} className="form-control" name="info" rows="5" placeholder="Description"></textarea>
-                        </div>
-                        <button type="submit" className="btn btn-design" >Submit</button>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div >
