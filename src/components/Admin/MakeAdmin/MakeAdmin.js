@@ -1,7 +1,11 @@
 import React, { useContext, useState } from 'react';
+import { UserContext } from '../../../App';
+import Sidebar from '../../Shared/Sidebar/Sidebar';
 
 const MakeAdmin = () => {
     const [admin, setAdmin] = useState({})
+
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
 
     const handleBlur = e => {
         const newAdmin = { ...admin }
@@ -30,15 +34,29 @@ const MakeAdmin = () => {
     }
 
     return (
-        <div style={{ backgroundColor: '#E5E5E5', height: '100vh' }}>
-            <div className='container' >
-                <h2 className="pt-5">Add Admin</h2>
-                <div className='mt-3 p-5 ' style={{ backgroundColor: '#fff', borderRadius: '20px' }}>
-                    <form onSubmit={handleSubmit} className="form-inline">
-                        <label className="sr-only">Email</label>
-                        <input id="email" type="email" name="email" onBlur={handleBlur} className="form-control mb-2 mr-sm-2" style={{ width: "450px" }} placeholder="jon@gamil.com" required />
-                        <button type="submit" className="btn mb-2" style={{ backgroundColor: '#009444', color: '#fff' }}>Submit</button>
-                    </form>
+        <div>
+            <div className='container'>
+
+                <div className="row">
+                    <div className="col-md-2" style={{ marginBottom: '300px' }}>
+                        <Sidebar />
+                    </div>
+                    <div className="col-md-10" style={{ backgroundColor: "aliceblue", height: '100vh' }}>
+                        <div className="d-flex justify-content-between mt-5">
+                            <h2>Add Admin</h2>
+                            <div className="d-flex">
+                                <img src={loggedInUser.photoURL} alt="" style={{ height: '30px', width: '30px', borderRadius: '50%' }} />
+                                <h5>{loggedInUser.name}</h5>
+                            </div>
+                        </div>
+                        <div className='mt-3' style={{ backgroundColor: '#fff', borderRadius: '20px', height: '50vh' }}>
+                            <form onSubmit={handleSubmit} className="form-inline" style={{ padding: '50px' }}>
+                                <label className="sr-only">Email</label>
+                                <input id="email" type="email" name="email" onBlur={handleBlur} className="form-control mb-2 mr-sm-2" style={{ width: "450px" }} placeholder="jon@gamil.com" required />
+                                <button type="submit" className="btn mb-2" style={{ backgroundColor: '#009444', color: '#fff' }}>Submit</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div >
