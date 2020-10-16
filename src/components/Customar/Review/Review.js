@@ -46,9 +46,6 @@ const Review = () => {
         <div style={{ backgroundColor: '#fff', height: '100vh' }}>
             <div className='container' >
                 <div className="row">
-                    <div className="col-md-2" style={{ marginBottom: '300px' }}>
-                        <Sidebar />
-                    </div>
                     <div className="col-md-10">
                         <div className="d-flex justify-content-between mt-5">
                             <h2>Review</h2>

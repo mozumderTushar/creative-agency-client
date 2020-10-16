@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import * as firebase from "firebase/app";
+import "firebase/auth";
+import firebaseConfig from '../../Login/firebase.config';
+
+if (firebase.apps.length === 0) {
+    firebase.initializeApp(firebaseConfig);
+}
 
 const Navbar = () => {
+
+    var user = firebase.auth().currentUser;
+    const [loggedIn, setLoggedIn] = useState(user ? true : false)
 
     return (
 
@@ -29,7 +39,10 @@ const Navbar = () => {
                             <a className="nav-link" href="/contact">Contact Us</a>
                         </li>
                     </ul>
-                    <Link className="btn btn-design" to="/login">Login</Link>
+
+                    {
+                        !loggedIn ? <Link className="btn btn-design" to="/login">Login</Link> : <p></p>
+                    }
                 </div>
             </nav>
         </div>
