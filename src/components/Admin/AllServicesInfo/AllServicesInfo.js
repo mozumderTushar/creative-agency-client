@@ -3,7 +3,7 @@ import './AllServices.css'
 
 const AllServicesInfo = ({ allServices }) => {
     return (
-        <table className="table table-borderless" style={{backgroundColor: '#fff', borderRadius:'10px'}}>
+        <table className="table table-borderless" style={{ backgroundColor: '#fff', borderRadius: '10px' }}>
             <thead>
                 <tr>
                     <th className="text-secondary" scope="col">Name</th>

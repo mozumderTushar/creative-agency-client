@@ -37,11 +37,11 @@ const Login = () => {
             const signedInUser = { name: displayName, email, photoURL }
             setLoggedInUser(signedInUser)
 
-            const isAdmin=adminList?.find(admin=>admin.email===signedInUser.email);
-            if(isAdmin){
+            const isAdmin = adminList?.find(admin => admin.email === signedInUser.email);
+            if (isAdmin) {
                 history.push('/sidebar');
             }
-            else{
+            else {
                 history.push('/')
             }
         }).catch(function (error) {
