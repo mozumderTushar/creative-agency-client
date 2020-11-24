@@ -27,39 +27,29 @@ function App() {
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
         <Switch>
-          <Route exact path='/'>
-            <Home />
-          </Route>
-          <Route path='/login'>
-            <Login />
-          </Route>
-          <PrivateRoute path='/customar/:serviceId'>
-            <Customar />
-          </PrivateRoute>
-          <PrivateRoute path='/order/:orderId'>
-            <OrderForm />
-          </PrivateRoute>
-          <PrivateRoute path='/addService'>
-            <AddServices />
-          </PrivateRoute>
-          <PrivateRoute path='/review'>
-            <Review />
-          </PrivateRoute>
-          <PrivateRoute path='/makeAdmin'>
-            <MakeAdmin />
-          </PrivateRoute>
-          <PrivateRoute path='/serviceList'>
-            <ServiceList />
-          </PrivateRoute>
-          <PrivateRoute path='/allServices'>
-            <AllServices />
-          </PrivateRoute>
-          <PrivateRoute path='/sidebar'>
-            <Sidebar />
-          </PrivateRoute>
-          <Route path='*'>
-            <NotFound />
-          </Route>
+
+          <Route exact path='/'> <Home /> </Route>
+
+          <Route path='/login'> <Login /> </Route>
+
+          <PrivateRoute path='/customar/:serviceId'> <Customar /> </PrivateRoute>
+
+          <PrivateRoute path='/order/:orderId'> <OrderForm /> </PrivateRoute>
+
+          <PrivateRoute path='/addService'> <AddServices /> </PrivateRoute>
+
+          <PrivateRoute path='/review'> <Review /> </PrivateRoute>
+
+          <PrivateRoute path='/makeAdmin'> <MakeAdmin /> </PrivateRoute>
+
+          <PrivateRoute path='/serviceList'> <ServiceList /> </PrivateRoute>
+
+          <PrivateRoute path='/allServices'> <AllServices /> </PrivateRoute>
+
+          <PrivateRoute path='/sidebar'> <Sidebar /> </PrivateRoute>
+
+          <Route path='*'> <NotFound /> </Route>
+          
         </Switch>
       </Router>
     </UserContext.Provider>

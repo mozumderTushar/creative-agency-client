@@ -1,3 +1,28 @@
+.icon-img{
+    height: 80px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+.BtnDesign{
+    width:-webkit-fill-available;
+    background-color: #111430;
+    border:none;
+    height: 40px;
+    color: #fff;
+}
+
+.forgetPassword{
+    margin-left: 100px;
+    color:#111430;
+    cursor: pointer;
+}
+
+.commonColor{
+    color:#111430;
+    cursor: pointer;
+}
+
 .google-button {
     background-image: url(https://i.ibb.co/jWsmmMJ/google.png);
     background-color: transparent;
@@ -17,38 +42,3 @@
     border:1px solid gray
 }
 
-.icon-img{
-    height: 80px;
-    display: block;
-    margin: 0 auto;
-    margin-top: 100px;
-}
-.card-style{
-    width: 25rem;
-    margin: 0 auto;
-    margin-top: 50px;
-    text-align: center;
-}
-@media (max-width: 767px){
-    .card-style{
-        width: 20rem;
-        margin: 0 auto;
-        margin-top: 50px;
-        text-align: center;
-    }
-    .google-button{
-        width: 250px;
-    }
-}
-@media  (max-width: 1365px) and (min-width: 768px){
-    .card-style{
-        width: 80%;
-        height: 500px;
-        margin: 0 auto;
-        margin-top: 50px;
-        text-align: center;
-    }
-    .google-button{
-        width: 350px;
-    }
-}
