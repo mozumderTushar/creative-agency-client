@@ -17,7 +17,7 @@ const Customar = () => {
             </div>
 
             <div className="col-md-10">
-            <img className='img-fluid' src="https://i.ibb.co/41CL3JF/Frame.png"  alt=""/>
+                <img className='img-fluid' src="https://i.ibb.co/41CL3JF/Frame.png" alt="" />
             </div>
         </div>
 

@@ -5,9 +5,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart, faCommentAlt, faPlus, faUserPlus, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 import { UserContext } from '../../../App';
 import OrderForm from '../../Customar/OrderForm/OrderForm';
+import AllServices from '../../Admin/AllServices/AllServices';
 
 
 const Sidebar = ({ serviceId }) => {
+
+    window.scrollTo(0, 0);
 
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [isAdmin, setIsAdmin] = useState(false)
@@ -32,8 +35,6 @@ const Sidebar = ({ serviceId }) => {
     }, [])
 
     return (
-
-
 
         <div>
             <div className='d-flex container'>
@@ -87,29 +88,8 @@ const Sidebar = ({ serviceId }) => {
                             </div>
 
                             <div>
-                                {window.location.pathname === '/sidebar' && <div className='service-data p-3'>
-                                    <table className="table table-borderless p-3" >
-                                        <thead>
-                                            <tr>
-                                                <th className="text-secondary" scope="col">Name</th>
-                                                <th className="text-secondary" scope="col">Email ID</th>
-                                                <th className="text-secondary" scope="col">Service</th>
-                                                <th className="text-secondary" scope="col">Project Details</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            {
-                                                allServices.map((service) =>
-                                                    <tr key={service._id}>
-                                                        <td>{service.name}</td>
-                                                        <td>{service.email}</td>
-                                                        <td>{service.service}</td>
-                                                        <td>{service.details}</td>
-                                                    </tr>
-                                                )
-                                            }
-                                        </tbody>
-                                    </table>
+                                {window.location.pathname === '/sidebar' && <div className='service-data'>
+                                    <img className='img-fluid' src="https://i.ibb.co/41CL3JF/Frame.png" alt="" style={{background: 'white'}}/>
                                 </div>}
                             </div>
 
