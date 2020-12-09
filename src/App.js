@@ -32,7 +32,8 @@ function App() {
 
           <Route path='/login'> <Login /> </Route>
 
-          <PrivateRoute path='/customar/:serviceId'> <Customar /> </PrivateRoute>
+          {/* <PrivateRoute path='/customar/:serviceId'> <Customar /> </PrivateRoute> */}
+          <Route path='/customar/:serviceId'> <Customar /> </Route>
 
           <PrivateRoute path='/order/:orderId'> <OrderForm /> </PrivateRoute>
 
@@ -46,7 +47,11 @@ function App() {
 
           <PrivateRoute path='/allServices'> <AllServices /> </PrivateRoute>
 
-          <PrivateRoute path='/sidebar'> <Sidebar /> </PrivateRoute>
+          <Route path='/allServices'> <AllServices /> </Route>
+
+          {/* <PrivateRoute path='/sidebar'> <Sidebar /> </PrivateRoute> */}
+
+          {/* <Route path='/sidebar'><Sidebar /></Route> */}
 
           <Route path='*'> <NotFound /> </Route>
           

@@ -47,6 +47,7 @@ const Review = () => {
             <div className='container' >
                 <div className="row">
                     <div className="col-md-10">
+                        
                         <div className="d-flex justify-content-between mt-5">
                             <h2>Review</h2>
                             <div className="d-flex">
@@ -54,6 +55,7 @@ const Review = () => {
                                 <h5>{loggedInUser.name}</h5>
                             </div>
                         </div>
+
                         <div className='mt-3 p-5' style={{ backgroundColor: 'aliceblue', borderRadius: '20px' }}>
                             <form onSubmit={handleSubmit}>
                                 <div className="form-group">

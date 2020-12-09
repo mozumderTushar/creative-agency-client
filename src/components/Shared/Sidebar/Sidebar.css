@@ -1,8 +1,11 @@
 .sidebar{
-    position: fixed;
+    display:flex;
+    flex-direction: column;
+
 }
 .sidebar li{
     margin-bottom: 2em;
+    width: 10vw;
 }
 .sidebar li:hover span{
     display: inline-block;
@@ -11,3 +14,10 @@
 .sidebar svg{
     margin-right: 5px;
 }
+.service-data{
+    display:flex;
+    flex-direction: column;
+    margin-top: -15vh;
+    background-color: #F4F7FC;
+}
+
