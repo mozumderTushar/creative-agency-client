@@ -30,6 +30,7 @@ const OrderForm = () => {
             service: data.service,
             details: data.details,
             price: data.price,
+            status:'Pending',
             time: new Date()
         }
 
