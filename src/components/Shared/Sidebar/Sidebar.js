@@ -4,8 +4,6 @@ import './Sidebar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart, faCommentAlt, faPlus, faUserPlus, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 import { UserContext } from '../../../App';
-import OrderForm from '../../Customar/OrderForm/OrderForm';
-import AllServices from '../../Admin/AllServices/AllServices';
 
 
 const Sidebar = ({ serviceId }) => {
@@ -26,13 +24,6 @@ const Sidebar = ({ serviceId }) => {
             })
     }, [])
 
-    const [allServices, setAllServices] = useState([])
-
-    useEffect(() => {
-        fetch('https://agile-cove-78620.herokuapp.com/orderList')
-            .then(res => res.json())
-            .then(data => setAllServices(data))
-    }, [])
 
     return (
 

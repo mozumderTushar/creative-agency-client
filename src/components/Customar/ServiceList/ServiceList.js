@@ -18,11 +18,13 @@ const ServiceList = () => {
 
 
     return (
-        <div className="container" style={{ backgroundColor: 'aliceblue' }}>
-            <div className="row">
-                {
-                    orderedServices.map(order => <ServiceListDetails key={order._id} order={order}></ServiceListDetails>)
-                }
+        <div  style={{ backgroundColor: 'aliceblue' }}>
+            <div className="container">
+                <div className="row">
+                    {
+                        orderedServices.map(order => <ServiceListDetails key={order._id} order={order}></ServiceListDetails>)
+                    }
+                </div>
             </div>
         </div>
     );
