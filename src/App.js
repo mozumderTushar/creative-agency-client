@@ -18,6 +18,12 @@ import ServiceList from './components/Customar/ServiceList/ServiceList';
 import NotFound from './components/NotFound/NotFound';
 import AllServices from './components/Admin/AllServices/AllServices';
 import Sidebar from './components/Shared/Sidebar/Sidebar';
+import Contact from './components/Contact/Contact';
+import Team from './components/Team/Team';
+import Portfolio from './components/Portfolio/Portfolio';
+import Services from './components/Home/Services/Services';
+import Navbar from './components/Home/Navbar/Navbar';
+
 
 export const UserContext = createContext();
 
@@ -31,6 +37,14 @@ function App() {
           <Route exact path='/'> <Home /> </Route>
 
           <Route path='/login'> <Login /> </Route>
+
+          <Route path='/contact'> <Contact /> </Route>
+
+          <Route path='/team'> <Team /> </Route>
+
+          <Route path='/portfolio'> <Portfolio /> </Route>
+
+          <Route path='/hire'> <Navbar /> <Services /> </Route>
 
           <PrivateRoute path='/customar/:serviceId'> <Customar /> </PrivateRoute>
 
